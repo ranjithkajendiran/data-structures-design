@@ -1,0 +1,25 @@
+def binary_search(arr, target):
+    low = 0
+    high = len(arr) - 1
+
+    while low <= high:
+        mid = (low + high) // 2
+
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+
+    return -1
+
+numbers = [2, 5, 7, 10, 14, 19, 22, 25, 29, 31, 36, 42, 45]
+target_number = 22
+
+result = binary_search(numbers, target_number)
+
+if result != -1:
+    print(f"Target number {target_number} found at index {result}.")
+else:
+    print(f"Target number {target_number} not found in the list.")
